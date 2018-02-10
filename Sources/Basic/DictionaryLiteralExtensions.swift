@@ -23,18 +23,3 @@ extension DictionaryLiteral where Key: CustomStringConvertible, Value: CustomStr
         return desc
     }
 }
-
-// MARK: Equatable
-extension DictionaryLiteral where Key: Equatable, Value: Equatable {
-    public static func ==(lhs: DictionaryLiteral, rhs: DictionaryLiteral) -> Bool {
-        if lhs.count != rhs.count {
-            return false
-        }
-        for i in 0..<lhs.count {
-            if lhs[i].key != rhs[i].key || lhs[i].value != rhs[i].value {
-                return false
-            }
-        }
-        return true
-    }
-}
